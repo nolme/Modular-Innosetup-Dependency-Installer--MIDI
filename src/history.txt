@@ -1,0 +1,5 @@
+HISTORY
+
+Edit file in 'src\history.txt' to add extra informations.
+
+To remove this page, delete 'InfoBeforeFile' inside [Setup] of setup.iss
