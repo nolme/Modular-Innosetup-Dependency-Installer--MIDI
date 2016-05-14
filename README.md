@@ -15,10 +15,19 @@ Embedded in this project :
 - PSD Graphics for welcome and finish page (http://www.psdgraphics.com)
 - 7-Zip for checking file architecture (x86/x64) (http://www.7-zip.org)
 
+Screenshots :
+-------------
+ <img src=http://i.imgur.com/wpbdkfm.png>
+ <img src=http://i.imgur.com/j324eba.png>
+ <img src=http://i.imgur.com/VrWlpNd.png>
+ <img src=http://i.imgur.com/0XADz2c.png>
+ <img src=http://i.imgur.com/hKHLPJQ.png>
+
 Known issues :
 --------------
 - Microsoft Office 2010 and below not detected.
 - Microsoft Access Runtime silent install don't work using the EXE installer.
+- Wrong message when dependencies are unselected
 
 Project tree :
 --------------
