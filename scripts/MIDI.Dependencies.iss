@@ -41,6 +41,10 @@
 	#ifdef use_vc2015
 		#include "dependencies\vcredist2015.iss"
 	#endif
+	
+	#ifdef use_docker
+		#include "dependencies\docker.iss"
+	#endif
 
 	#ifdef use_crystalreports13
 		#include "dependencies\crystalreports13.iss"
@@ -124,6 +128,11 @@ begin
 #ifdef use_vc2015
 	if (IsComponentSelected ('dependencies\ms_vs2015')) then
 		vcredist2015();
+#endif
+
+#ifdef use_docker
+	if (IsComponentSelected ('dependencies\docker')) then
+		docker();
 #endif
 
 #ifdef use_sqlcompact40

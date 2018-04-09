@@ -101,13 +101,14 @@ end;
 /// <returns></returns>
 function MIDI_SmartExec(prod : MIDI_TProduct; var ResultCode : Integer) : boolean;
 begin
-	Log ('[MIDI] Run application : ' + prod.File);
+	Log ('[MIDI] Run application : ' + prod.File + ' with params : ' + prod.Parameters);
 
 	if (LowerCase(Copy(prod.File,Length(prod.File)-2,3)) = 'exe') then begin
 		Result := Exec(prod.File, prod.Parameters, '', SW_SHOWNORMAL, ewWaitUntilTerminated, ResultCode);
 	end else begin
 		Result := ShellExec('', prod.File, prod.Parameters, '', SW_SHOWNORMAL, ewWaitUntilTerminated, ResultCode);
 	end;
+	Log ('[MIDI] Run result  : ' + MIDI_BoolToStr(Result));
 end;
 
 

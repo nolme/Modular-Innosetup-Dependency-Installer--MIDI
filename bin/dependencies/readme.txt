@@ -16,6 +16,7 @@ Supported dependency names:
 |   vcredist2012[*1].exe
 |   vcredist2013[*1].exe
 |   vcredist2015[*1].exe
+|   docker.exe
 |   vstor_redist.exe
 
 [*1] = "_x64" for 64-bit OS, "_ia64" for Itanium OS or "" (empty) for 32-bit OS

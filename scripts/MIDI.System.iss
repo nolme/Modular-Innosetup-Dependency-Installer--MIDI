@@ -221,6 +221,22 @@ begin
 end;
 
 /// <summary>
+/// Get the uninstall string for 64 bits systems
+/// </summary>
+/// <returns>Uninstall string.</returns>
+function MIDI_GetUninstallString64(ApplicationId: String): String;
+var
+	sUnInstPath: String;
+	sUnInstallString: String;
+begin
+	sUnInstPath := 'Software\Microsoft\Windows\CurrentVersion\Uninstall\' + ApplicationId;
+	sUnInstallString := '';
+	if not RegQueryStringValue(MIDI_GetHKLM(), sUnInstPath, 'UninstallString', sUnInstallString) then
+		RegQueryStringValue(HKCU, sUnInstPath, 'UninstallString', sUnInstallString);
+	Result := sUnInstallString;
+end;
+
+/// <summary>
 /// Check if application is an upgrade
 /// </summary>
 /// <returns>True if it's an application upgrade. False otherwise.</returns>

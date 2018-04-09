@@ -49,15 +49,17 @@
 ; 	#define use_dotnetfx40
 
 ; 	#define use_dotnetfx46
-	#define use_dotnetfx461
+;	#define use_dotnetfx461
 
-	#define use_msiproduct
-	#define use_vc2005
-	#define use_vc2008
-	#define use_vc2010
-	#define use_vc2012
-	#define use_vc2013
-	#define use_vc2015
+;	#define use_msiproduct
+;	#define use_vc2005
+;	#define use_vc2008
+;	#define use_vc2010
+;	#define use_vc2012
+;	#define use_vc2013
+;	#define use_vc2015
+	
+	#define use_docker
 
 ; 	#define use_crystalreports13
 
