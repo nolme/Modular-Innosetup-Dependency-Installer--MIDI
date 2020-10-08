@@ -15,7 +15,9 @@ ru.MIDI_SqlLanguage=RUS
 const
 	SqlServer2014_MajorVersion = 12;
 	SqlServer2016_MajorVersion = 13;
-	SqlServer_MajorVersion = SqlServer2016_MajorVersion;
+	SqlServer2017_MajorVersion = 14;
+	SqlServer2019_MajorVersion = 15;
+	SqlServer_MajorVersion = SqlServer2019_MajorVersion;
 
 var
     DataPage_ServerNameTextBox: TEdit;

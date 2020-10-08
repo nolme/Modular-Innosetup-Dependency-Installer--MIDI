@@ -1,5 +1,9 @@
 ﻿; Contribute on https://github.com/nolme/Modular-InnoSetup-Dependency-Installer
 
+; Note 1 : you must install IDP plugin : https://code.google.com/archive/p/inno-download-plugin/
+; Note 2 : Add this line to file "C:\Program Files (x86)\Inno Setup 6\ISPPBuiltins.iss" :
+;           #pragma include "C:\Program Files (x86)\Inno Download Plugin"
+
 ; Manage dependencies
 #include "setup_define_dependencies.iss"
 #include "scripts\MIDI.Core.iss"
@@ -25,13 +29,14 @@ AppSupportPhone={#MyAppContactPhone}
 AppMutex={#MyAppMutex}
 OutputBaseFilename={#MyAppSetupName}-{#MyAppVersion_Major}.{#MyAppVersion_Minor}.{#MyAppVersion_SubVersionMajor}.{#MyAppVersion_SubVersionMinor}
 DefaultGroupName={#MyAppCompanyName} - {#MyAppSetupName}
-DefaultDirName={pf}\{#MyAppCompanyName}\{#MyAppSetupName}
+DefaultDirName={commonpf}\{#MyAppCompanyName}\{#MyAppSetupName}
 UninstallDisplayIcon={app}\MyProgram.exe
 OutputDir=bin
 SourceDir=.
 AllowNoIcons=yes
 ;SetupIconFile=MyProgramIcon
 SolidCompression=yes
+WizardStyle=modern
 
 ; Display user information page (see http://www.jrsoftware.org/ishelp/index.php?topic=setup_userinfopage). 
 UserInfoPage= yes
@@ -60,7 +65,7 @@ CloseApplications=force
 
 ; Set minimum OS
 ; (see http://www.jrsoftware.org/ishelp/index.php?topic=setup_minversion)
-MinVersion={#OS_WindowsXpSp3}
+MinVersion={#OS_Windows7}
 
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl";            LicenseFile: "src\license\License_English.txt";
@@ -97,7 +102,7 @@ Name: "help"; Description: {cm:MIDI_Component_Help}; Types: custom;
 Name: "{group}\{#MyAppSetupName}"; Filename: "{app}\MyProgram.exe"
 Name: "{group}\{cm:UninstallProgram,{#MyAppSetupName}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#MyAppSetupName}"; Filename: "{app}\MyProgram.exe"; Tasks: desktopicon
-Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppSetupName}"; Filename: "{app}\MyProgram.exe"; Tasks: quicklaunchicon
+//Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppSetupName}"; Filename: "{app}\MyProgram.exe"; Tasks: quicklaunchicon
 
 [Run]
 Filename: "{app}\MyProgram.exe"; Parameters: ""; Description: "{cm:LaunchProgram,{#MyAppSetupName}}"; Flags: nowait postinstall skipifsilent

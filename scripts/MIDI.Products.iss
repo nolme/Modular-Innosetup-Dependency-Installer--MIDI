@@ -26,8 +26,6 @@ var
 /// Clear product list
 /// </summary>
 procedure MIDI_ClearProducts ();
-var
-	i: Integer;
 begin
 	// Reset array of MIDI_Products
 	SetArrayLength (MIDI_Products, 0);

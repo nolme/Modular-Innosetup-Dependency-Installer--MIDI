@@ -61,6 +61,14 @@
 ;     #include "dependencies\sql2016express.iss"
 ; 	#endif
 
+	#ifdef use_sql2017express
+		#include "dependencies\sql2017express.iss"
+	#endif
+
+	#ifdef use_sql2019express
+		#include "dependencies\sql2019express.iss"
+	#endif
+
 	#ifdef use_vsto2010
 		#include "dependencies\vsto2010.iss"
 	#endif
@@ -106,66 +114,76 @@ begin
 #endif
 
 #ifdef use_vc2005
-	if (IsComponentSelected ('dependencies\ms_vs2005')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vs2005')) then
 		vcredist2005();
 #endif
 #ifdef use_vc2008
-	if (IsComponentSelected ('dependencies\ms_vs2008')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vs2008')) then
 		vcredist2008();
 #endif
 #ifdef use_vc2010
-	if (IsComponentSelected ('dependencies\ms_vs2010')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vs2010')) then
 		vcredist2010();
 #endif
 #ifdef use_vc2012
-	if (IsComponentSelected ('dependencies\ms_vs2012')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vs2012')) then
 		vcredist2012();
 #endif
 #ifdef use_vc2013
-	if (IsComponentSelected ('dependencies\ms_vs2013')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vs2013')) then
 		vcredist2013();
 #endif
 #ifdef use_vc2015
-	if (IsComponentSelected ('dependencies\ms_vs2015')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vs2015')) then
 		vcredist2015();
 #endif
 
 #ifdef use_docker
-	if (IsComponentSelected ('dependencies\docker')) then
+	if (WizardIsComponentSelected ('dependencies\docker')) then
 		docker();
 #endif
 
 #ifdef use_sqlcompact40
-	if (IsComponentSelected ('dependencies\ms_sqlcompact40')) then
+	if (WizardIsComponentSelected ('dependencies\ms_sqlcompact40')) then
 		sqlcompact40();
 #endif
 
 #ifdef use_sql2014sp1express
-	if (IsComponentSelected ('dependencies\ms_sql2014express')) then
+	if (WizardIsComponentSelected ('dependencies\ms_sql2014express')) then
 		sql2014express();
 #endif
 #ifdef use_sql2016express
-	if (IsComponentSelected ('dependencies\ms_sql2016express')) then
+	if (WizardIsComponentSelected ('dependencies\ms_sql2016express')) then
 		sql2016express();
 #endif
 
+#ifdef use_sql2017express
+	if (WizardIsComponentSelected ('dependencies\ms_sql2017express')) then
+		sql2017express();
+#endif
+
+#ifdef use_sql2019express
+	if (WizardIsComponentSelected ('dependencies\ms_sql2019express')) then
+		sql2019express();
+#endif
+
 #ifdef use_vsto2010
-	if (IsComponentSelected ('dependencies\ms_vsto2010')) then
+	if (WizardIsComponentSelected ('dependencies\ms_vsto2010')) then
 		visualstudio2010toolsforoffice();
 #endif
 
 #ifdef use_crystalreports13
-	if (IsComponentSelected ('dependencies\sap_crystalreports13')) then
+	if (WizardIsComponentSelected ('dependencies\sap_crystalreports13')) then
 		crystalreports13 ();
 #endif
 
 #ifdef use_accessruntime2016
-	if (IsComponentSelected ('dependencies\ms_accessruntime2016')) then
+	if (WizardIsComponentSelected ('dependencies\ms_accessruntime2016')) then
 		accessruntime2016();
 #endif
 
 #ifdef use_custom1
-	if (IsComponentSelected ('dependencies\custom1')) then
+	if (WizardIsComponentSelected ('dependencies\custom1')) then
 		custom1();
 #endif
 end;

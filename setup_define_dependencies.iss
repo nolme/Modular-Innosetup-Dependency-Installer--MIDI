@@ -7,7 +7,7 @@
 #define MIDI_UninstallBefore
 
 ; Use or not VCL Styles
-#define MIDI_VclStyles
+;#define MIDI_VclStyles
 
 ; Use dependencies
 #define MIDI_Dependencies
@@ -21,7 +21,7 @@
 ; -------------------------------------------------------------------------------------------------------
 #define MyAppSetupName 'MyProgram'
 #define MyAppCompanyName 'GitHub Project'
-#define MyCopyright 'Copyright © 2007-2016'
+#define MyCopyright 'Copyright © 2007-2020'
 #define MyAppMutex "MUTEX_@@++@@////"
 #define MyAppContactMail "support@mycompany.com"
 #define MyAppContactPhone "0000-00000-00000"
@@ -59,20 +59,23 @@
 ;	#define use_vc2013
 ;	#define use_vc2015
 	
-	#define use_docker
+; #define use_docker
 
-; 	#define use_crystalreports13
+; #define use_crystalreports13
 
-; 	#define use_sqlcompact40
+; #define use_sqlcompact40
 
-; 	#define use_sql2014express
-;   #define use_sql2016express - Still CTP. NOT YET IMPLEMENTED
+; #define use_sql2014express
+; #define use_sql2016express - Still CTP. NOT YET IMPLEMENTED
 
-; 	#define use_vsto2010
+#define use_sql2017express
+;#define use_sql2019express
 
-; 	#define use_accessruntime2016
+; #define use_vsto2010
 
-;   #define use_custom1
+; #define use_accessruntime2016
+
+; #define use_custom1
 #endif
 ; -------------------------------------------------------------------------------------------------------
 ; VCL Styles
